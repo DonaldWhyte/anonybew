@@ -56,7 +56,7 @@ function tpl_menu() { global $page, $webimroot, $errors;
 <?php } ?>
 					<li<?php menuli("settings")?>><a href='<?php echo $webimroot ?>/operator/settings.php'><?php echo getlocal('leftMenu.client_settings') ?></a></li>
 					<li<?php menuli("translate")?>><a href='<?php echo $webimroot ?>/operator/translate.php'><?php echo getlocal('menu.translate') ?></a></li>
-					<li<?php menuli("updates")?>><a href='<?php echo $webimroot ?>/operator/updates.php'><?php echo getlocal('menu.updates') ?></a></li>
+					<li<?php menuli("updates")?>> <del> <a href='<?php echo $webimroot ?>/operator/updates.php'><?php echo getlocal('menu.updates') ?></a> </del> </li>
 <?php } ?>
 <?php if(isset($page['currentopid']) && $page['currentopid']) {?>
 					<li<?php menuli("profile")?>><a href='<?php echo $webimroot ?>/operator/operator.php?op=<?php echo $page['currentopid'] ?>'><?php echo getlocal('menu.profile') ?></a></li>

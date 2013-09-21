@@ -35,30 +35,17 @@ function tpl_content() { global $page, $webimroot;
 <br />
 <div>
 	<div class="mform"><div class="formtop"><div class="formtopi"></div></div><div class="forminner">
-	
-		<?php echo getlocal("updates.news")?><br/>
-		<div id="news">
-		</div>
-		
-		<?php echo getlocal("updates.current")?><br/>
-			<div id="cver"><?php echo $page['version'] ?></div>
-			
-		<br/>
-
-		<?php echo getlocal("updates.latest")?>
-			<div id="lver"></div>
-		
-		<br/>
-			
-		<?php echo getlocal("updates.installed_locales")?><br/>
-			<?php foreach( $page['localizations'] as $loc ) { ?>
-				<?php echo $loc ?>
-			<?php } ?>
-		
-		<br/><br/>	
-		
-		<?php echo getlocal("updates.env")?><br/>
-			PHP <?php echo $page['phpVersion'] ?>
+	 	
+	<p>
+		Anonybew is <strong>not compatible</strong> with other versions of Mibew or Mibew updates
+		due to the non-confidential data used by the standard Mibew software. This means
+		informarion regarding new versions and updates available for Mibew Messenger is not
+		available.
+	</p>
+	<p>
+		For the latest version of Anonybew, please visit
+		<a href="https://github.com/DonaldWhyte/anonybew">here</a>.
+	</p>
 
 	</div><div class="formbottom"><div class="formbottomi"></div></div></div>
 </div>		
