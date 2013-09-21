@@ -109,7 +109,6 @@ if (isset($_POST['address'])) {
 	if ($thread) {
 		$page['thread'] = topage($thread['userName']);
 		$page['threadid'] = $threadid;
-		$page['formaddress'] = topage($thread['remote']);
 		$page['formdays'] = 15;
 	}
 }

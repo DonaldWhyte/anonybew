@@ -73,7 +73,6 @@ if ($show == 'redirect' || $show == 'redirected' || $show == 'agentchat' || $sho
 		array(
 			 'threadid' => 0,
 			 'userName' => getstring("chat.default.username"),
-			 'remote' => "1.2.3.4",
 			 'agentId' => 1,
 			 'groupid' => 0,
 			 'userid' => 'visitor1',
