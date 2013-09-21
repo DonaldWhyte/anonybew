@@ -21,6 +21,7 @@ require_once(dirname(__FILE__) . '/converter.php');
 require_once(dirname(__FILE__) . '/config.php');
 
 $version = '1.6.5';
+$anonybew_version = '1.0.0';
 $jsver = "165";
 
 function myiconv($in_enc, $out_enc, $string)
