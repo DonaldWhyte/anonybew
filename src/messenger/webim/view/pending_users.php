@@ -58,7 +58,6 @@ function tpl_content() { global $page, $webimroot;
 <thead>
 <tr>
 	<th class="first"><?php echo getlocal("pending.table.head.name") ?></th>
-	<th><?php echo getlocal("pending.table.head.contactid") ?></th>
     <th><?php echo getlocal("pending.table.head.state") ?></th>
     <th><?php echo getlocal("pending.table.head.operator") ?></th>
     <th><?php echo getlocal("pending.table.head.total") ?></th>
@@ -67,16 +66,16 @@ function tpl_content() { global $page, $webimroot;
 </tr>
 </thead>
 <tbody>
-<tr id="tprio"><td colspan="7"></td></tr>
-<tr id="tprioend"><td colspan="7"></td></tr>
+<tr id="tprio"><td colspan="6"></td></tr>
+<tr id="tprioend"><td colspan="6"></td></tr>
 
-<tr id="twait"><td colspan="7"></td></tr>
-<tr id="twaitend"><td colspan="7"></td></tr>
+<tr id="twait"><td colspan="6"></td></tr>
+<tr id="twaitend"><td colspan="7=6"></td></tr>
 
-<tr id="tchat"><td colspan="7"></td></tr>
-<tr id="tchatend"><td colspan="7"></td></tr>
+<tr id="tchat"><td colspan="6"></td></tr>
+<tr id="tchatend"><td colspan="6"></td></tr>
 
-<tr><td id="statustd" colspan="7" height="30">Loading....</td></tr>
+<tr><td id="statustd" colspan="6" height="30">Loading....</td></tr>
 </tbody>
 </table>
 

@@ -175,12 +175,11 @@ Class.inherit( Ajax.ThreadListUpdater, Ajax.Base, {
 	}
 
 	var vname = NodeUtils.getNodeValue(node,"name");
-	var vaddr = NodeUtils.getNodeValue(node,"addr");
 	var vtime = NodeUtils.getNodeValue(node,"time");
 	var agent = NodeUtils.getNodeValue(node,"agent");
 	var modified = NodeUtils.getNodeValue(node,"modified");
 	var message = NodeUtils.getNodeValue(node,"message");
-	var etc = '<td>'+NodeUtils.getNodeValue(node,"useragent")+'</td>';
+	var etc = '<td></td>';
 
 	if(ban != null) {
 		etc = '<td>'+NodeUtils.getNodeValue(node,"reason")+'</td>';
@@ -205,7 +204,6 @@ Class.inherit( Ajax.ThreadListUpdater, Ajax.Base, {
 		row.id = "thr"+id;
 		this.threadTimers[id] = new Array(vtime,modified,stateid);
 		CommonUtils.insertCell(row, "name", "visitor", null, null, HtmlGenerationUtils.viewOpenCell(vname,this._options.agentservl,id,canview,canopen,ban,message,stateid!='chat'));
-		CommonUtils.insertCell(row, "contid", "visitor", "center", null, vaddr );
 		CommonUtils.insertCell(row, "state", "visitor", "center", null, vstate );
 		CommonUtils.insertCell(row, "op", "visitor", "center", null, agent );
 		CommonUtils.insertCell(row, "time", "visitor", "center", null, this.getTimeSince(vtime) );
@@ -218,7 +216,6 @@ Class.inherit( Ajax.ThreadListUpdater, Ajax.Base, {
 		this.threadTimers[id] = new Array(vtime,modified,stateid);
 		row.className = (ban == "blocked" && stateid != "chat") ? "ban" : "in"+stateid;
 		setcell(this.t, row,"name",HtmlGenerationUtils.viewOpenCell(vname,this._options.agentservl,id,canview,canopen,ban,message,stateid!='chat'));
-		setcell(this.t, row,"contid",vaddr);
 		setcell(this.t, row,"state",vstate);
 		setcell(this.t, row,"op",agent);
 		setcell(this.t, row,"time",this.getTimeSince(vtime));
