@@ -86,8 +86,6 @@ $can_viewthreads, $can_takeover, $mysqlprefix;
 		$result .= htmlspecialchars(getstring('chat.client.spam.prefix'));
 	}
 	$result .= htmlspecialchars(htmlspecialchars(get_user_name($thread['userName'], $thread['remote'], $thread['userid']))) . "</name>";
-	$result .= "<addr>" . htmlspecialchars(get_user_addr($thread['remote'])) . "</addr>";
-	$result .= "<agent>" . htmlspecialchars(htmlspecialchars($threadoperator)) . "</agent>";
 	$result .= "<time>" . $thread['unix_timestamp(dtmcreated)'] . "000</time>";
 	$result .= "<modified>" . $thread['unix_timestamp(dtmmodified)'] . "000</modified>";
 
