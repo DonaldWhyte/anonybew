@@ -6,8 +6,8 @@ admin.content.client_gen_button=Code generator , butonul HTML.
 admin.content.client_settings=Specificati optiunile ce afecteaza fereastra de chat si sistemul de comportament.
 admin.content.description=Functiile disponibile pentru operatorii site-ului.
 agent.not_logged_in=Timpul dumneavoastra a expirat , va rugam sa intrati din nou
-app.descr=Mibew Messenger este o aplicatie gratuita de live suport.
-app.title=Mibew Messenger
+app.descr=Anonybew Messenger este o aplicatie gratuita de live suport.
+app.title=Anonybew Messenger
 ban.error.duplicate=Adresa specificata este deja in folosire, apasati <a href="ban.php?id={1}">here</a> daca doriti sa modificati.
 button.delete=Stergeti
 button.enter=Intrare
@@ -87,8 +87,8 @@ chat.window.predefined.select_answer=alegeti raspunsul ...
 chat.window.product_name=Mibew <span class="grey">Messenger</span>
 chat.window.send_message=Expediati mesaj
 chat.window.send_message_short=Transmite {0}
-chat.window.title.agent=Mibew Messenger (agent)
-chat.window.title.user=Mibew Messenger (utilizator)
+chat.window.title.agent=Anonybew Messenger (agent)
+chat.window.title.user=Anonybew Messenger (utilizator)
 chat.window.toolbar.mail_history=Expediati istoria chat -ului prin e-mail
 chat.window.toolbar.redirect_user=Vizitator redirectionat la alt operator
 chat.window.toolbar.refresh=Reinoire
@@ -100,7 +100,7 @@ clients.queue.prio=Rindul vizitatoriloe de prioritate
 clients.queue.wait=Asteptam operatorul pentru prima data
 clients.title=Lista vizitatorilor in asteptare
 common.asterisk_explanation=<b><span style='font-size:8.0pt;color:red'>*</span></b> - domenii obligatorii
-company.title=Mibew Messenger Community
+company.title=Anonybew Messenger Community
 confirm.take.head=Schimbati operatorul
 confirm.take.message=Vizitatorul <span style="color:blue;">{0}</span> deja este asistat de <span style="color:green;">{1}</span>.<br/>. Sunteti sigur ca vreti sa incepeti chat cu vizitatorul?
 confirm.take.no=Nu, inchideti fereastra

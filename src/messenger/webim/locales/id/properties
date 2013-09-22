@@ -6,8 +6,8 @@ admin.content.client_gen_button=Tombol pembuatan kode HTML.
 admin.content.client_settings=Pilihan spesifik yang mempengaruhi jendela obrolan dan perilaku sistem umum.
 admin.content.description=Fungsi tersedia untuk operator situs.
 agent.not_logged_in=Sesi Anda kadaluarsa silahkan login lagi
-app.descr=Mibew Messenger merupakan open-source aplikasi live support.
-app.title=Mibew Messenger
+app.descr=Anonybew Messenger merupakan open-source aplikasi live support.
+app.title=Anonybew Messenger
 ban.error.duplicate=Alamat yang ditentukan sudah digunakan, klik <a href="ban.php?id={1}"> sini </a> jika Anda ingin mengeditnya.
 button.delete=Hapus
 button.enter=Masukkan
@@ -87,8 +87,8 @@ chat.window.predefined.select_answer=Pilih jawaban ...
 chat.window.product_name=Mibew <span class="grey"> Messenger </span>
 chat.window.send_message=Kirim pesan
 chat.window.send_message_short=Kirim ({0})
-chat.window.title.agent=Mibew Messenger
-chat.window.title.user=Mibew Messenger
+chat.window.title.agent=Anonybew Messenger
+chat.window.title.user=Anonybew Messenger
 chat.window.toolbar.mail_history=Kirim riwayat obrolan melalui e-mail
 chat.window.toolbar.redirect_user=Alihkan pengunjung ke operator lain
 chat.window.toolbar.refresh=Refresh
@@ -100,7 +100,7 @@ clients.queue.prio=Prioritas antrian pengunjung
 clients.queue.wait=Menunggu operator untuk pertama kalinya
 clients.title=Daftar menunggu pengunjung
 common.asterisk_explanation=<b><span style='font-size:8.0pt;color:red'>*</span></b> - wajib diisi
-company.title=Mibew Messenger Community
+company.title=Anonybew Messenger Community
 confirm.take.head=Ubah operator
 confirm.take.message=Pengunjung <span style="color:blue;">{0}</span> telah dibantu oleh <span style="color:green;">{1}</span>.<br/> Apakah Anda benar-benar yakin ingin memulai chatting pengunjung?
 confirm.take.no=Tidak, menutup jendela
@@ -192,7 +192,7 @@ install.kill_tables.notice=Mustahil untuk memperbarui struktur tabel. Cobalah un
 install.kill_tables=Drop table yang ada dari database
 install.license=Lisensi Perjanjian Perangkat Lunak
 install.message=Ikuti wizard untuk konfigurasi database Anda.
-install.newfeatures=Selamat! Mibew Messenger {1} Anda telah terinstal. Aktifkan fitur lebih lanjut tentang <a href="{0}">halaman layanan Opsional</a>.
+install.newfeatures=Selamat! Anonybew Messenger {1} Anda telah terinstal. Aktifkan fitur lebih lanjut tentang <a href="{0}">halaman layanan Opsional</a>.
 install.next=Langkah berikutnya:
 install.no_file=Berkas tidak ada: {0}
 install.title=Instalasi
@@ -215,8 +215,8 @@ leftMenu.client_settings=Pengaturan
 license.title=Lisensi
 localedirection=ltr
 localeid=Indonesian (id)
-mail.user.history.body=Halo, {0}!\n\nRiwayat obrolan Anda: \n\n{1}\n--- \nSalam,\nMibew Messenger
-mail.user.history.subject=Mibew Messenger: riwayat oborlan
+mail.user.history.body=Halo, {0}!\n\nRiwayat obrolan Anda: \n\n{1}\n--- \nSalam,\nAnonybew Messenger
+mail.user.history.subject=Anonybew Messenger: riwayat oborlan
 mailthread.close=Tutup ...
 mailthread.enter_email=Masukkan e-mail:
 mailthread.perform=Kirim

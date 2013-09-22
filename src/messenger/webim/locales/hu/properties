@@ -100,7 +100,7 @@ clients.queue.prio=Elsőbbségben lévő ügyfelek listája
 clients.queue.wait=Először várakoznak operátorra
 clients.title=Várakozó ügyfelek listája
 common.asterisk_explanation=<b><span style='font-size:8.0pt;color:red'>*</span></b> - kötelező mező
-company.title=Mibew Messenger Community
+company.title=Anonybew Messenger Community
 confirm.take.head=Operátor váltása
 confirm.take.message=Az ügyfélnek<span style="color:blue;">{0}</span>már segít <span style="color:green;">{1}</span>.<br/> Biztos vagy benne, hogy beszélni akarsz az ügyféllel?
 confirm.take.no=Nem, ablak bezárása
@@ -192,7 +192,7 @@ install.kill_tables.notice=Lehetetlen frissíteni a táblákat. Próbálja meg k
 install.kill_tables=Meglévő táblák törlése az adatbázisból
 install.license=Szoftver licenc szerződés
 install.message=Kövesse az varázslót az adatbázis beállításához.
-install.newfeatures=Gratulálunk! A Mibew Messenger {1} sikeresen fel lett telepítve. A részleteket beállíthatja a <a href="{0}">Kiegészítő szolgáltatások </a> oldalon.
+install.newfeatures=Gratulálunk! A Anonybew Messenger {1} sikeresen fel lett telepítve. A részleteket beállíthatja a <a href="{0}">Kiegészítő szolgáltatások </a> oldalon.
 install.next=Következő lépés:
 install.no_file=A fájl: {0} hiányzik
 install.title=Installálás
@@ -252,7 +252,7 @@ page.analysis.userhistory.intro=Itt találja az ügyfelekkel folytatott beszélg
 page.analysis.userhistory.title=Előzmények
 page.chat.old_browser.close=Bezárás...
 page.chat.old_browser.list=<ul> <li>Internet Explorer 5.5+</li> <li>Firefox 1.0+</li> <li>Opera 8.0+</li> <li>Mozilla 1.4+</li> <li>Netscape 7.1+</li> <li>Safari 1.2+</li> </ul> <p>További támogatott régebbi böngészők:</p> <ul> <li>Internet Explorer 5.0</li> <li>Opera 7.0</li> </ul>
-page.chat.old_browser.problem=<p>A böngészőjét nem teljesen támogatja a Mibew Messenger. \nKérem, használja a következő böngészők egyikét: \n</p>
+page.chat.old_browser.problem=<p>A böngészőjét nem teljesen támogatja a Anonybew Messenger. \nKérem, használja a következő böngészők egyikét: \n</p>
 page.chat.old_browser.title=Kérem frissítse a böngészőjét
 page.gen_button.choose_group=Csoport kiválasztása
 page.gen_button.choose_image=Kép kiválasztása
@@ -403,7 +403,7 @@ restore.back_to_login=Vissza a bejelentkezéshez
 restore.emailorlogin=Felhasználónév vagy E-mail:
 restore.intro=Nem tudjuk elküldeni a jelszavát, de beállíthat egy újat, ha követi az e-mailben elküldött hivatkozást.
 restore.mailsubj=Állítsa be újra a Mibew jelszavát
-restore.mailtext=Üdv {0}!\n\nKérjük kattintson az alábbi linkre vagy másolja be az URL-t a böngészőjébe:\n{1} \n\nEz lehetővé teszi, hogy új jelszót válasszon.\n\nMibew Messenger.
+restore.mailtext=Üdv {0}!\n\nKérjük kattintson az alábbi linkre vagy másolja be az URL-t a böngészőjébe:\n{1} \n\nEz lehetővé teszi, hogy új jelszót válasszon.\n\nAnonybew Messenger.
 restore.pwd.message=Elfelejtette a jelszavát?
 restore.sent.title=Jelszó visszaállítása
 restore.sent=Elküldtük a tájékoztatást az e-mail címére. Kérjük ellenőrizze!

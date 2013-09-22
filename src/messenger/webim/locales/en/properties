@@ -6,8 +6,8 @@ admin.content.client_gen_button=Button HTML code generation.
 admin.content.client_settings=Specify options affecting chat window and common system behavior.
 admin.content.description=Functions available for site operators.
 agent.not_logged_in=Your session has expired. Please login again
-app.descr=Mibew Messenger is an open-source live support application.
-app.title=Mibew Messenger
+app.descr=Anonybew Messenger is an open-source live support application.
+app.title=Anonybew Messenger
 ban.error.duplicate=The specified address is already in use. Click <a href="ban.php?id={1}">here</a> if you want to edit it.
 button.delete=Delete
 button.enter=Enter
@@ -87,8 +87,8 @@ chat.window.predefined.select_answer=Select answer...
 chat.window.product_name=Mibew <span class="grey">Messenger</span>
 chat.window.send_message=Send message
 chat.window.send_message_short=Send ({0})
-chat.window.title.agent=Mibew Messenger
-chat.window.title.user=Mibew Messenger
+chat.window.title.agent=Anonybew Messenger
+chat.window.title.user=Anonybew Messenger
 chat.window.toolbar.mail_history=Send chat history by e-mail
 chat.window.toolbar.redirect_user=Redirect visitor to another operator
 chat.window.toolbar.refresh=Refresh
@@ -100,7 +100,7 @@ clients.queue.prio=Priority visitors' queue
 clients.queue.wait=Waiting an operator for the first time
 clients.title=List of visitors waiting
 common.asterisk_explanation=<b><span style='font-size:8.0pt;color:red'>*</span></b> - mandatory fields
-company.title=Mibew Messenger Community
+company.title=Anonybew Messenger Community
 confirm.take.head=Change operator
 confirm.take.message=Visitor <span style="color:blue;">{0}</span> is already being assisted by <span style="color:green;">{1}</span>.<br/> Are you really sure you want to start chatting the visitor?
 confirm.take.no=No. Close the window
@@ -194,7 +194,7 @@ install.kill_tables.notice=Impossible to update tables structure. Try to do it m
 install.kill_tables=Drop existing tables from database
 install.license=Software license agreement
 install.message=Follow the wizard to setup your database. 
-install.newfeatures=Congratulations! You now have Mibew Messenger {1} installed. Turn on more features on the <a href="{0}">Optional services</a> page.
+install.newfeatures=Congratulations! You now have Anonybew Messenger {1} installed. Turn on more features on the <a href="{0}">Optional services</a> page.
 install.next=Next step:
 install.no_file=File is absent: {0}
 install.title=Installation
