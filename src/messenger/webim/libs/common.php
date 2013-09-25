@@ -729,4 +729,33 @@ function setcsrftoken()
 	}
 }
 
+/* Removes all closed threads from database. */
+function remove_closed_threads($link) {
+	global $state_closed, $mysqlprefix;
+	// Get IDs of all threads that are closed
+	$query = "SELECT threadid FROM ${mysqlprefix}chatthread WHERE istate = $state_closed";
+	echo $query . "<br />";
+	$thread_ids = select_multi_assoc($query, $link);
+	$num_closed_threads = count($thread_ids);
+	echo "Found $num_closed_threads closed threads<br /><br />";
+	// Construct string to use for later queries
+	if ($num_closed_threads > 0) {
+		$thread_id_string = "(";
+		for ($i = 0; ($i < $num_closed_threads - 1); $i++) {
+			$thread_id_string .= ($thread_ids[$i]["threadid"] . ", ");
+		}
+		$thread_id_string .= $thread_ids[$num_closed_threads - 1]["threadid"]; // last thread ID
+		$thread_id_string .= ")";
+
+		// Delete all messages belonging to those threads
+		$query = "DELETE FROM ${mysqlprefix}chatmessage WHERE threadid in $thread_id_string";
+		echo $query . "<br />";
+		perform_query($query, $link);
+		// Delete the threads themselves
+		$query = "DELETE FROM ${mysqlprefix}chatthread WHERE threadid in $thread_id_string";
+		echo $query . "<br />";
+		perform_query($query, $link);
+	}
+}
+
 ?>
