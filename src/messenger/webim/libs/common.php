@@ -19,6 +19,7 @@ session_start();
 
 require_once(dirname(__FILE__) . '/converter.php');
 require_once(dirname(__FILE__) . '/config.php');
+require_once(dirname(__FILE__) . '/chat.php'); // for $state_closed
 
 $version = '1.6.5';
 $anonybew_version = '1.0.0';
@@ -737,7 +738,6 @@ function remove_closed_threads($link) {
 	echo $query . "<br />";
 	$thread_ids = select_multi_assoc($query, $link);
 	$num_closed_threads = count($thread_ids);
-	echo "Found $num_closed_threads closed threads<br /><br />";
 	// Construct string to use for later queries
 	if ($num_closed_threads > 0) {
 		$thread_id_string = "(";
@@ -757,5 +757,61 @@ function remove_closed_threads($link) {
 		perform_query($query, $link);
 	}
 }
+
+/* Use lazy initialisation to create required tables/data for Anonybew features. */
+function anonybew_data_initialisation($link) {
+	global $mysqldb, $mysqlprefix;
+	$query = "SELECT * FROM information_schema.TABLES WHERE (TABLE_SCHEMA = '$mysqldb') AND (TABLE_NAME = '${mysqlprefix}anonybew_data')";
+	$result = select_multi_assoc($query, $link);
+	if (count($result) == 0) {
+		$query = "CREATE TABLE ${mysqlprefix}anonybew_data (property VARCHAR(50) PRIMARY KEY, value VARCHAR(50))";
+		perform_query($query, $link);
+	}
+	// If last_anonymisation property does not exist, create it!
+	$query = "SELECT * FROM ${mysqlprefix}anonybew_data WHERE property = 'last_anonymisation'";
+	$result = select_multi_assoc($query, $link);
+	if (count($result) == 0) {
+		$query = "INSERT INTO ${mysqlprefix}anonybew_data(property, value) VALUES('last_anonymisation', '0')";
+		perform_query($query, $link);
+	}
+}
+
+/* Returns time (Epoch time in seconds) since data was last anonymised. */
+function get_time_of_last_anonymisation($link) {
+	global $mysqlprefix;
+
+	$query = "SELECT value FROM ${mysqlprefix}anonybew_data WHERE property = 'last_anonymisation'";
+	$result = select_one_row($query, $link);
+	if ($result) {
+		return intval( $result["value"] );
+	} else {
+		return 0;
+	}
+}
+
+/* Update time data was last anonymised to given time. */
+function set_time_of_last_anonymisation($new_time, $link) {
+	global $mysqlprefix;
+
+	$query = "UPDATE ${mysqlprefix}anonybew_data SET value = '$new_time' WHERE property = 'last_anonymisation'";
+	perform_query($query, $link);
+}
+
+/* If enough time has passed since the last anonymisation
+ * procedure, scrub database of historical and personal data. */
+function perform_anonymisation() {
+	$ANONYMISATION_INTERVAL = 180; // three minutes
+
+	$link = connect();
+	anonybew_data_initialisation($link);
+	// If enough time has passed since last anonymisation, perform it!
+	$last_anonymisation = get_time_of_last_anonymisation($link);
+	$time_passed = time() - $last_anonymisation;;
+	if ($time_passed >= $ANONYMISATION_INTERVAL) {
+		remove_closed_threads($link);
+		set_time_of_last_anonymisation(time(), $link);
+	}
+}
+perform_anonymisation();
 
 ?>
