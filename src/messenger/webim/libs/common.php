@@ -637,6 +637,9 @@ $settings = array(
 	'updatefrequency_operator' => 2,
 	'updatefrequency_chat' => 2,
 	'updatefrequency_oldchat' => 7,
+
+	/* Number of seconds between anonymisation procedure is ran. */
+	'anonymisation_interval' => 180 // three minutes
 );
 $settingsloaded = false;
 $settings_in_db = array();
@@ -735,7 +738,6 @@ function remove_closed_threads($link) {
 	global $state_closed, $mysqlprefix;
 	// Get IDs of all threads that are closed
 	$query = "SELECT threadid FROM ${mysqlprefix}chatthread WHERE istate = $state_closed";
-	echo $query . "<br />";
 	$thread_ids = select_multi_assoc($query, $link);
 	$num_closed_threads = count($thread_ids);
 	// Construct string to use for later queries
@@ -749,11 +751,9 @@ function remove_closed_threads($link) {
 
 		// Delete all messages belonging to those threads
 		$query = "DELETE FROM ${mysqlprefix}chatmessage WHERE threadid in $thread_id_string";
-		echo $query . "<br />";
 		perform_query($query, $link);
 		// Delete the threads themselves
 		$query = "DELETE FROM ${mysqlprefix}chatthread WHERE threadid in $thread_id_string";
-		echo $query . "<br />";
 		perform_query($query, $link);
 	}
 }
@@ -800,14 +800,14 @@ function set_time_of_last_anonymisation($new_time, $link) {
 /* If enough time has passed since the last anonymisation
  * procedure, scrub database of historical and personal data. */
 function perform_anonymisation() {
-	$ANONYMISATION_INTERVAL = 180; // three minutes
+	global $settings;
 
 	$link = connect();
 	anonybew_data_initialisation($link);
 	// If enough time has passed since last anonymisation, perform it!
 	$last_anonymisation = get_time_of_last_anonymisation($link);
 	$time_passed = time() - $last_anonymisation;;
-	if ($time_passed >= $ANONYMISATION_INTERVAL) {
+	if ($time_passed >= $settings['anonymisation_interval']) {
 		remove_closed_threads($link);
 		set_time_of_last_anonymisation(time(), $link);
 	}
