@@ -85,59 +85,6 @@ function fpermissions($file)
 	return $info;
 }
 
-function check_files()
-{
-	global $page, $errors, $webimroot;
-
-	$packageFile = dirname(__FILE__) . "/package";
-	$fp = @fopen($packageFile, "r");
-	if ($fp === FALSE) {
-		$errors[] = getlocal2("install.cannot_read", array("$webimroot/install/package"));
-		if (file_exists($packageFile)) {
-			$errors[] = getlocal2("install.check_permissions", array(fpermissions($packageFile)));
-		}
-		return false;
-	}
-
-	$knownFiles = array();
-	while (!feof($fp)) {
-		$line = fgets($fp, 4096);
-		$keyval = preg_split("/ /", $line, 2);
-		if (isset($keyval[1])) {
-			$knownFiles[$keyval[0]] = trim($keyval[1]);
-		}
-	}
-	fclose($fp);
-
-	foreach ($knownFiles as $file => $sum) {
-		$relativeName = dirname(__FILE__) . "/../$file";
-		if (!is_readable($relativeName)) {
-			if (file_exists($relativeName)) {
-				$errors[] = getlocal2("install.cannot_read", array("$webimroot/$file"));
-				$errors[] = getlocal2("install.check_permissions", array(fpermissions($relativeName)));
-			} else {
-				$errors[] = getlocal2("install.no_file", array("$webimroot/$file"));
-			}
-			return false;
-		}
-		if ($sum != "-") {
-			$result = md5_file($relativeName);
-			if ($result != $sum) {
-				// try without \r
-				$result = md5(str_replace("\r", "", file_get_contents($relativeName)));
-			}
-			if ($result != $sum) {
-				$errors[] = getlocal2("install.bad_checksum", array("$webimroot/$file"));
-				$errors[] = getlocal("install.check_files");
-				return false;
-			}
-		}
-	}
-
-	$page['done'][] = getlocal("install.0.package");
-	return true;
-}
-
 function check_connection()
 {
 	global $mysqlhost, $mysqllogin, $mysqlpass, $page, $errors, $webimroot;
@@ -259,10 +206,6 @@ function check_status()
 	$page['done'][] = getlocal2("install.0.php", array(phpversion()));
 
 	if (!check_webimroot()) {
-		return;
-	}
-
-	if (!check_files()) {
 		return;
 	}
 
