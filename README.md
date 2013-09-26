@@ -1,7 +1,7 @@
 # Anonybew
 
 [Click here](http://donaldwhyte.co.uk/files/anonybew-messenger-snapshot-26.09.13.zip) to
-download the latest snapshop of the Anonybew Messenger.
+download the latest snapshot of the Anonybew Messenger.
 
 Anonybew is a fork of Mibew Messenger, an open-source live support
 application written in PHP and MySQL. Mibew enables one-on-one chat
