@@ -797,6 +797,15 @@ function set_time_of_last_anonymisation($new_time, $link) {
 	perform_query($query, $link);
 }
 
+/* Return true if tables required for anonymisation procedure exist and false otherwise. */
+function required_tables_created($link) {
+	global $mysqldb, $mysqlprefix;
+	// BOTH the thread and message tables must be present!
+	$query = "SELECT * FROM information_schema.TABLES WHERE (TABLE_SCHEMA = '$mysqldb') AND (TABLE_NAME IN ('${mysqlprefix}chatthread', '${mysqlprefix}chatmessage'))";
+	$result = select_multi_assoc($query, $link);
+	return (count($result) == 2);
+}
+
 /* If enough time has passed since the last anonymisation
  * procedure, scrub database of historical and personal data. */
 function perform_anonymisation() {
@@ -804,6 +813,10 @@ function perform_anonymisation() {
 
 	$link = connect();
 	anonybew_data_initialisation($link);
+
+	// Ensure standard Webim tables have been created
+	if (!required_tables_created($link)) return;
+
 	// If enough time has passed since last anonymisation, perform it!
 	$last_anonymisation = get_time_of_last_anonymisation($link);
 	$time_passed = time() - $last_anonymisation;;
